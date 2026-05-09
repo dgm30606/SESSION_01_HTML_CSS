@@ -12,5 +12,5 @@ body {
 }
 
 html {
-    scroll-behavior: smooth; /* Cuộn mượt khi click nav link */
+    scroll-behavior: smooth;
 }
