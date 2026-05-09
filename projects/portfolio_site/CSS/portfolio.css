@@ -1,0 +1,119 @@
+/* --- 1. Layout & Tiêu đề --- */
+.portfolio-section {
+    padding: 5rem 1rem;
+    background-color: var(--color-light);
+}
+
+.portfolio-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--color-dark);
+}
+
+/* --- 2. Nút lọc danh mục (Theo mockup image_837b5a.jpg) --- */
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1.5px solid var(--color-primary);
+    padding: 0.6rem 2rem;
+    border-radius: 30px; /* Hình viên thuốc */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: var(--color-primary);
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: var(--color-primary);
+    color: white;
+}
+
+/* --- 3. Lưới dự án (Grid) --- */
+.portfolio-grid {
+    display: grid;
+    /* Tự động chia 3 cột desktop, 2 cột tablet, 1 cột mobile */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px; /* Bo góc lớn giống mockup */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.portfolio-item img {
+    width: 100%;
+    aspect-ratio: 4/3; /* Giữ tỷ lệ ảnh chuẩn */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease; /* Hiệu ứng zoom mượt */
+}
+
+/* Hiệu ứng hover: phóng to ảnh và hiện lớp phủ */
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(30, 41, 59, 0.95), transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+/* --- 4. CSS Lightbox (Không dùng JavaScript) --- */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 2000;
+}
+
+/* Hiển thị khi được link tới ID */
+.lightbox:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 8px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 3rem;
+    color: white;
+    text-decoration: none;
+}

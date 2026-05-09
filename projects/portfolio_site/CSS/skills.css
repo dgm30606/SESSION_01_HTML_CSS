@@ -1,48 +1,74 @@
-/* Layout cho phần Skills */
 .skills-section {
-    padding: 5rem 0;
+    padding: 5rem 1rem;
+    background-color: #f8fafc; /* Đổi nền section thành xám nhạt */
+}
+
+.skills-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--color-dark, #1e293b);
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 cột trên desktop */
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
+/* TẠO GIAO DIỆN DẠNG THẺ (CARD) CHO TỪNG KỸ NĂNG */
 .skill-item {
-    margin-bottom: 1.5rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); /* Đổ bóng cực nhẹ */
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px); /* Nảy nhẹ lên khi đưa chuột vào */
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 
 .skill-name {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
+    color: var(--color-dark, #1e293b);
 }
 
-/* Cấu trúc thanh Bar */
+.skill-percent {
+    color: var(--color-primary, #6366f1); /* Số % màu tím */
+}
+
+/* Thanh track màu xám */
 .skill-bar {
-    height: 12px; /* Chiều cao thanh */
-    background: #e2e8f0; /* Màu nền thanh */
-    border-radius: 10px;
+    background: #e2e8f0;
+    border-radius: 20px; /* Bo tròn mạnh hơn */
+    height: 10px; /* Thu nhỏ chiều cao lại cho thanh lịch */
     overflow: hidden;
 }
 
-/* Hiệu ứng màu tiến trình */
+/* Thanh fill màu tím trơn */
 .skill-progress {
+    background: var(--color-primary, #6366f1); /* Dùng màu tím trơn thay vì gradient */
     height: 100%;
-    width: 0; /* Bắt đầu từ 0 để tạo animation */
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary)); /* Màu gradient */
-    transition: width 1s ease-out; /* Animation mượt 1 giây */
+    border-radius: 20px;
+    animation: fillBar 1.5s ease-out forwards;
 }
 
-/* Class kích hoạt animation khi scroll tới */
-.skill-progress.animate {
-    width: var(--percent); /* Sẽ nhận giá trị từ HTML thông qua biến --percent */
+@keyframes fillBar {
+    from { width: 0; }
 }
 
-/* Responsive cho Mobile */
 @media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: 1fr; /* 1 cột trên mobile */
+    .skills-grid { 
+        grid-template-columns: 1fr; 
     }
 }
