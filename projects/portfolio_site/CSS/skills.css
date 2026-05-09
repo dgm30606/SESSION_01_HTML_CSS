@@ -1,0 +1,48 @@
+/* Layout cho phần Skills */
+.skills-section {
+    padding: 5rem 0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cột trên desktop */
+    gap: 2rem;
+}
+
+.skill-item {
+    margin-bottom: 1.5rem;
+}
+
+.skill-name {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+/* Cấu trúc thanh Bar */
+.skill-bar {
+    height: 12px; /* Chiều cao thanh */
+    background: #e2e8f0; /* Màu nền thanh */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Hiệu ứng màu tiến trình */
+.skill-progress {
+    height: 100%;
+    width: 0; /* Bắt đầu từ 0 để tạo animation */
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary)); /* Màu gradient */
+    transition: width 1s ease-out; /* Animation mượt 1 giây */
+}
+
+/* Class kích hoạt animation khi scroll tới */
+.skill-progress.animate {
+    width: var(--percent); /* Sẽ nhận giá trị từ HTML thông qua biến --percent */
+}
+
+/* Responsive cho Mobile */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr; /* 1 cột trên mobile */
+    }
+}
