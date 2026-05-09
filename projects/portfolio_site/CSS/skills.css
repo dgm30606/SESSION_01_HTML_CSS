@@ -1,6 +1,6 @@
 .skills-section {
     padding: 5rem 1rem;
-    background-color: #f8fafc; /* Đổi nền section thành xám nhạt */
+    background-color: #f8fafc;
 }
 
 .skills-section h2 {
@@ -18,17 +18,16 @@
     margin: 0 auto;
 }
 
-/* TẠO GIAO DIỆN DẠNG THẺ (CARD) CHO TỪNG KỸ NĂNG */
 .skill-item {
     background: white;
     padding: 2rem;
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); /* Đổ bóng cực nhẹ */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     transition: transform 0.3s ease;
 }
 
 .skill-item:hover {
-    transform: translateY(-5px); /* Nảy nhẹ lên khi đưa chuột vào */
+    transform: translateY(-5px);
 }
 
 .skill-info {
@@ -44,20 +43,20 @@
 }
 
 .skill-percent {
-    color: var(--color-primary, #6366f1); /* Số % màu tím */
+    color: var(--color-primary);
 }
 
-/* Thanh track màu xám */
+
 .skill-bar {
     background: #e2e8f0;
-    border-radius: 20px; /* Bo tròn mạnh hơn */
-    height: 10px; /* Thu nhỏ chiều cao lại cho thanh lịch */
+    border-radius: 20px; 
+    height: 10px;
     overflow: hidden;
 }
 
-/* Thanh fill màu tím trơn */
+
 .skill-progress {
-    background: var(--color-primary, #6366f1); /* Dùng màu tím trơn thay vì gradient */
+    background: var(--color-primary);
     height: 100%;
     border-radius: 20px;
     animation: fillBar 1.5s ease-out forwards;

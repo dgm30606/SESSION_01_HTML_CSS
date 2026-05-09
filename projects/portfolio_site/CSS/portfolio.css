@@ -1,4 +1,3 @@
-/* --- 1. Layout & Tiêu đề --- */
 .portfolio-section {
     padding: 5rem 1rem;
     background-color: var(--color-light);
@@ -11,7 +10,6 @@
     color: var(--color-dark);
 }
 
-/* --- 2. Nút lọc danh mục (Theo mockup image_837b5a.jpg) --- */
 .portfolio-filters {
     display: flex;
     justify-content: center;
@@ -24,7 +22,7 @@
     background: transparent;
     border: 1.5px solid var(--color-primary);
     padding: 0.6rem 2rem;
-    border-radius: 30px; /* Hình viên thuốc */
+    border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 500;
@@ -36,10 +34,8 @@
     color: white;
 }
 
-/* --- 3. Lưới dự án (Grid) --- */
 .portfolio-grid {
     display: grid;
-    /* Tự động chia 3 cột desktop, 2 cột tablet, 1 cột mobile */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
     max-width: 1200px;
@@ -49,21 +45,15 @@
 .portfolio-item {
     position: relative;
     overflow: hidden;
-    border-radius: 16px; /* Bo góc lớn giống mockup */
+    border-radius: 16px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .portfolio-item img {
     width: 100%;
-    aspect-ratio: 4/3; /* Giữ tỷ lệ ảnh chuẩn */
+    aspect-ratio: 4/3; 
     object-fit: cover;
     display: block;
-    transition: transform 0.4s ease; /* Hiệu ứng zoom mượt */
-}
-
-/* Hiệu ứng hover: phóng to ảnh và hiện lớp phủ */
-.portfolio-item:hover img {
-    transform: scale(1.1);
 }
 
 .portfolio-overlay {
@@ -83,7 +73,6 @@
     opacity: 1;
 }
 
-/* --- 4. CSS Lightbox (Không dùng JavaScript) --- */
 .lightbox {
     position: fixed;
     inset: 0;
@@ -97,7 +86,6 @@
     z-index: 2000;
 }
 
-/* Hiển thị khi được link tới ID */
 .lightbox:target {
     opacity: 1;
     visibility: visible;
